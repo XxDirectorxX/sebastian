@@ -1,0 +1,45 @@
+openapi: 3.0.0
+info:
+  title: Quantum API System
+  version: 1.0.0
+  description: Advanced quantum field processing API
+
+paths:
+  /ws/quantum:
+    get:
+      summary: WebSocket endpoint for quantum field updates
+      tags: [Quantum]
+      responses:
+        200:
+          description: WebSocket connection established
+
+  /quantum/process:
+    post:
+      summary: Process quantum state
+      tags: [Quantum]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuantumState'
+      responses:
+        200:
+          description: Processed quantum state
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuantumResponse'
+
+components:
+  schemas:
+    QuantumState:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: number
+        field_strength:
+          type: number
+          default: 46.97871376

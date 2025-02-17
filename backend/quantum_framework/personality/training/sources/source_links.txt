@@ -1,0 +1,37 @@
+https://www.black-butler.net/
+
+character_data
+                'https://kuroshitsuji.fandom.com/wiki/Sebastian_Michaelis',
+                'https://persona-records.fandom.com/wiki/Sebastian_Michaelis',
+                'https://myanimelist.net/character/4963/Sebastian_Michaelis',
+                'https://www.behindthevoiceactors.com/characters/Black-Butler/Sebastian-Michaelis/',
+                'https://anidb.net/character/5832'
+
+anime_sources
+                'nyaa.si/black-butler-complete',
+                'animetosho.org/black-butler',
+                'subsplease.org/black-butler',
+                'animebytes.tv/black-butler',
+                'anidex.info/black-butler',
+                'bakabt.me/black-butler',
+                'acgnx.se/black-butler'
+
+dub_sources
+                'dubs.to/anime/black-butler',
+                'animedao.to/black-butler',
+                'animepahe.com/black-butler',
+                'gogoanime.tv/black-butler'
+
+manga_chapters
+                'mangadex.org/title/black-butler',
+                'mangasee123.com/manga/Black-Butler',
+                'mangakakalot.com/manga/black_butler',
+                'mangahere.cc/manga/kuroshitsuji',
+                'mangareader.to/black-butler',
+                'manganato.com/manga/black_butler',
+                'fanfox.net/manga/kuroshitsuji'    
+
+
+
+
+

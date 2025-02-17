@@ -1,0 +1,662 @@
+R:\sebastian>tree /f
+Folder PATH listing for volume QuantumRAM
+Volume serial number is F00A-9DB1
+R:.
+│   import_manager.py
+│   requirements.txt
+│   __init__.py
+│
+├───backend
+│   │   __init__.py
+│   │
+│   ├───api
+│   │   │   api-server.py
+│   │   │   api.env
+│   │   │   config.py
+│   │   │   dependencies.py
+│   │   │   main.py
+│   │   │   quantum_processor.py
+│   │   │   utils.py
+│   │   │
+│   │   ├───auth
+│   │   │       security.py
+│   │   │
+│   │   ├───core
+│   │   │       field_stability_controller.py
+│   │   │       quantum_field_integration.py
+│   │   │       quantum_field_manager.py
+│   │   │       reality_field.py
+│   │   │
+│   │   ├───database
+│   │   │       connection.py
+│   │   │       models.py
+│   │   │
+│   │   ├───docs
+│   │   │       api_spec.yaml
+│   │   │
+│   │   ├───endpoints
+│   │   │       endpoints.py
+│   │   │       monitoring_endpoints.py
+│   │   │       quantum_endpoints.py
+│   │   │       reality_endpoints.py
+│   │   │
+│   │   ├───integration
+│   │   │       field_integration_service.py
+│   │   │       resource_controller.py
+│   │   │       websocket_manager.py
+│   │   │
+│   │   ├───middleware
+│   │   │       quantum_middleware.py
+│   │   │
+│   │   ├───models
+│   │   │       quantum_models.py
+│   │   │
+│   │   ├───monitoring
+│   │   │       quantum_monitor.py
+│   │   │
+│   │   ├───routers
+│   │   │       chat.py
+│   │   │       nlp.py
+│   │   │       speech.py
+│   │   │
+│   │   ├───schemas
+│   │   │       validators.py
+│   │   │
+│   │   ├───tests
+│   │   │       conftest.py
+│   │   │       test_chat.py
+│   │   │       test_endpoints.py
+│   │   │       test_nlp.py
+│   │   │       test_quantum.py
+│   │   │       test_speech.py
+│   │   │       test_websocket.py
+│   │   │
+│   │   └───utils
+│   │           helpers.py
+│   │
+│   ├───data
+│   │   │   cleaned-data.csv
+│   │   │   intents.json
+│   │   │   speech-config.json
+│   │   │   training-data.pkl
+│   │   │
+│   │   ├───processed
+│   │   ├───processors
+│   │   │       data_manager.py
+│   │   │       model_serializer.py
+│   │   │       raw_processor.py
+│   │   │       training_generator.py
+│   │   │
+│   │   ├───raw
+│   │   └───training
+│   ├───database
+│   │   ├───anime_data
+│   │   │       interaction_data.py
+│   │   │       voice_patterns.py
+│   │   │
+│   │   ├───manga_data
+│   │   │       behavior_contexts.py
+│   │   │       dialogue_patterns.py
+│   │   │
+│   │   ├───personality_data
+│   │   │       behavior_patterns.py
+│   │   │       emotional_patterns.py
+│   │   │       interaction_patterns.py
+│   │   │       response_patterns.py
+│   │   │       trait_matrix.py
+│   │   │
+│   │   └───processed_data
+│   │           response_patterns.py
+│   │           trait_matrices.py
+│   │
+│   ├───intelligence_systems
+│   │   ├───ai
+│   │   │       chatbot.py
+│   │   │       model-inference.py
+│   │   │       model-training.py
+│   │   │       nlp-model.py
+│   │   │       speech-recognition.py
+│   │   │
+│   │   ├───autonomous-actions
+│   │   │       action-executor.py
+│   │   │       action-scheduler.py
+│   │   │       autonomous-actions.py.py
+│   │   │       decision-maker.py
+│   │   │       self-healing.py
+│   │   │
+│   │   ├───emotional-intelligence
+│   │   │       emotion-simulation.py
+│   │   │       emotional-recognition.py
+│   │   │       emotional-simulation.py
+│   │   │       emotional_core.py
+│   │   │       learning-algorithm.py
+│   │   │       sentiment-analysis.py
+│   │   │
+│   │   ├───financial-intelligence
+│   │   ├───learning-systems
+│   │   │       feedback-processor.py
+│   │   │       learning-algorithm.py
+│   │   │       learning_core.py
+│   │   │       model-updater.py
+│   │   │
+│   │   ├───memory
+│   │   │       memory_core.py
+│   │   │
+│   │   ├───object-recognition
+│   │   │       face-recognition.txt
+│   │   │       image-processing.txt
+│   │   │       object-detector.txt
+│   │   │
+│   │   ├───personality
+│   │   │   ├───ai				# Core AI functions & logic for personality
+│   │   │   │   ├─ cognitive_engine/   		# Handles logical reasoning, learning, and adaptation
+│   │   │   │   │  ├── decision_making.py  	# Core logic for making decisions based on input
+│   │   │   │   │  ├── neural_adaptation.py  	# Adapts responses based on learned behavior
+│   │   │   │   │  └── problem_solving.py  	# Implements strategic problem-solving techniques
+│   │   │   │   │
+│   │   │   │   └─ quantum_processor/  		# Quantum-based enhancements for AI performance
+│   │   │   │      ├── qml_analysis.py  	# Quantum machine learning algorithms
+│   │   │   │      ├── quantum_learning.py  	# Self-improving AI learning techniques
+│   │   │   │      └── predictive_modeling.py  	# Uses quantum computing for future predictions
+│   │   │   │   
+│   │   │   ├─── brain
+│   │   │   │   ├─ memory/                      # Stores long-term memory and tracks user history
+│   │   │   │   │  ├─ long_term_memory.py       # Stores long-term memories (user preferences, habits)
+│   │   │   │   │  ├─ short_term_memory.py      # Temporary memory, like ongoing conversation history
+│   │   │   │   │  └─ memory_inference.py       # Logic to recall or apply memories in decision-making
+│   │   │   │   │
+│   │   │   │   ├─ reasoning/              	# Handles logic for reasoning and decisions
+│   │   │   │   │  ├── decision_tree.py         # Decision trees for logic-based decisions
+│   │   │   │   │  ├── inference_engine.py      # Core inference engine for complex decision-making
+│   │   │   │   │  └── scenario_simulator.py    # Simulates scenarios to test reasoning and decisions
+│   │   │   │   │   
+│   │   │   │   └─ logic/                       # Lower-level logic for decision-making and reasoning
+│   │   │   │      ├── logic_base.py            # Base classes for all logic operations (decision-making)
+│   │   │   │      ├── rules_engine.py          # Logic that applies rules (if-else, fuzzy logic, etc.)
+│   │   │   │      └── fuzzy_logic.py           # Fuzzy logic for decision-making in uncertain scenarios
+│   │   │   │   
+│   │   │   │   
+│   │   │   ├───butler
+│   │   │   │   ├───expertise
+│   │   │   │   └───service_core
+│   │   │   └───persona
+│   │   │       ├───core_traits
+│   │   │       │   ├───demonic
+│   │   │       │   │       power_control.py
+│   │   │       │   │       reality_manipulation.py
+│   │   │       │   │
+│   │   │       │   ├───efficiency
+│   │   │       │   │       precise_execution.py
+│   │   │       │   │       swift_action.py
+│   │   │       │   │
+│   │   │       │   ├───elegance
+│   │   │       │   │       eloquent_responses.py
+│   │   │       │   │       refined_manners.py
+│   │   │       │   │
+│   │   │       │   ├───intelligence
+│   │   │       │   │       decision_matrices.py
+│   │   │       │   │       situational_awareness.py
+│   │   │       │   │       strategic_planning.py
+│   │   │       │   │       tactical_analysis.py
+│   │   │       │   │       threat_assessment.py
+│   │   │       │   │
+│   │   │       │   ├───loyalty
+│   │   │       │   │       unwavering_loyalty.py
+│   │   │       │   │
+│   │   │       │   └───service
+│   │   │       │           perfect_service.py
+│   │   │       │
+│   │   │       ├───database
+│   │   │       │   ├───personality_data
+│   │   │       │   └───processed_data
+│   │   │       ├───interaction_design
+│   │   │       │   ├───behavioral_matrix
+│   │   │       │   ├───dialogue_systems
+│   │   │       │   └───user_adaptation
+│   │   │       ├───quantum_core
+│   │   │       │       coherence_maintenance.py
+│   │   │       │       field_operations.py
+│   │   │       │       reality_integration.py
+│   │   │       │
+│   │   │       ├───strategic_core
+│   │   │       │   ├───combat_systems
+│   │   │       │   ├───decision_engine
+│   │   │       │   └───service_protocols
+│   │   │       └───training
+│   │   │           ├───data_collection
+│   │   │           ├───model_training
+│   │   │           └───validation
+│   │   ├───social-intelligence
+│   │   │       social_core.py
+│   │   │
+│   │   ├───task-managment
+│   │   │       task-executor.txt
+│   │   │       task-handler.txt
+│   │   │       task-scheduler.txt
+│   │   │
+│   │   ├───user-interaction
+│   │   │       conversation-manager.txt
+│   │   │       response-generator.txt
+│   │   │       user-profile.txt
+│   │   │
+│   │   ├───vision
+│   │   └───voice-cloning
+│   ├───models
+│   │       nlp-model.h5
+│   │       speech-model.keras
+│   │
+│   ├───quantum_framework
+│   │   │   error-correction.py
+│   │   │   framework_updater.py
+│   │   │   init.py
+│   │   │
+│   │   ├───core
+│   │   │   │   field.py
+│   │   │   │   operator.py
+│   │   │   │   processor.py
+│   │   │   │   state.py
+│   │   │   │   tensor.py
+│   │   │   │   __init__.py
+│   │   │   │
+│   │   │   └───tests
+│   │   │           field.py
+│   │   │           operator.py
+│   │   │           processor.py
+│   │   │           state.py
+│   │   │           tensor.py
+│   │   │           test_core.py
+│   │   │           test_core.py.bak
+│   │   │
+│   │   ├───evolution
+│   │   │       coherence.py
+│   │   │       coherence_evolution.py
+│   │   │       entanglement_evolution.py
+│   │   │       evolution_harmonizer.py
+│   │   │       evolution_integrator.py
+│   │   │       evolution_manager.py
+│   │   │       evolution_monitor.py
+│   │   │       evolution_optimizer.py
+│   │   │       evolution_orchestrator.py
+│   │   │       evolution_processor.py
+│   │   │       evolution_stabilizer.py
+│   │   │       evolution_validator.py
+│   │   │       field_evolution.py
+│   │   │       harmonics_evolution.py
+│   │   │       operator_evolution.py
+│   │   │       project_evolution_orchestrator.py
+│   │   │       quantum_evolution_core.py
+│   │   │       reality_evolution.py
+│   │   │       state_evolution.py
+│   │   │       superposition_evolution.py
+│   │   │       upgrade_orchestrator.py
+│   │   │
+│   │   ├───integration
+│   │   │       emotion.py
+│   │   │       personality.py
+│   │   │       unified.py
+│   │   │       voice.py
+│   │   │
+│   │   ├───optimization
+│   │   │       coherence_optimizer.py
+│   │   │       field_optimizer.py
+│   │   │       optimization_processor.py
+│   │   │       reality_optimizer.py
+│   │   │       state_optimizer.py
+│   │   │
+│   │   ├───orchestration
+│   │   │       coherence_orchestrator.py
+│   │   │       field_orchestrator.py
+│   │   │       reality_orchestrator.py
+│   │   │       state_orchestrator.py
+│   │   │       unified_orchestrator.py
+│   │   │
+│   │   ├── personality/
+│   │   │   ├─ ai/                         # Core AI functions & logic
+│   │   │   │  ├─ ai_core.py               # Main AI engine to handle inputs and logic
+│   │   │   │  ├─ dialogue_manager.py      # Manage dialogues and conversation flow
+│   │   │   │  ├─ intent_recognizer.py     # Recognize and categorize user intents
+│   │   │   │  └─ response_generator.py    # Generate responses based on intents and context
+│   │   │   │  
+│   │   │   ├─ brain/                      # Decision-making, reasoning, memory
+│   │   │   │  ├─ memory.py                # Store and retrieve memory (past interactions)
+│   │   │   │  ├─ reasoning.py             # Reasoning and decision-making logic
+│   │   │   │  └─ decision_maker.py        # Make decisions based on input and logic
+│   │   │   │
+│   │   │   ├─ butler/                     # Sebastian's personality logic & responses
+│   │   │   │  ├─ sebastian_personality.py # Core logic defining Sebastian's personality
+│   │   │   │  ├─ loyalty_trait.py         # Loyalty-related behavior and traits
+│   │   │   │  ├─ elegance_trait.py        # Elegance-related behavior and traits
+│   │   │   │  ├─ intelligence_trait.py    # Intelligence-related behavior and traits
+│   │   │   │  ├─ mood_management.py       # Handle and adjust mood
+│   │   │   │  └─ response_logic.py        # Determine the appropriate responses based on personality
+│   │   │   │
+│   │   │   ├─ persona/                     # Customization & user interaction settings
+│   │   │   │  ├─ user_profile.py          # Store user data and preferences
+│   │   │   │  ├─ interaction_settings.py  # Configure how Sebastian interacts with the user
+│   │   │   │  ├─ greetings.py             # Define greetings and conversational openers
+│   │   │   │  └─ user_interactions.py     # Handle user interactions and responses
+│   │   │   │  
+│   │   │   ├─ training/                    # Data collection, processing, and preparation
+│   │   │   │  ├─ ai_modeling/             # Scripts related to AI model definitions and evaluation
+│   │   │   │  │ ├─ model_definitions.py # Define AI models and architectures
+│   │   │   │  │ └─ model_evaluation.py  # Evaluate the performance of AI models
+│   │   │   │  │
+│   │   │   │  ├─ analysis/                # Analyzing the data for insights and improvements
+│   │   │   │  │ ├─ data_insights.py     # Generate insights from the collected data
+│   │   │   │  │ └─ evaluation_metrics.py# Metrics to evaluate model performance
+│   │   │   │  │
+│   │   │   │  ├─ data_collection/         # Scripts for gathering data for training
+│   │   │   │  │ ├─ collect_intents.py   # Collect user intents and data for training
+│   │   │   │  │ └─ scrape_data.py       # Web scraping for external data
+│   │   │   │  │
+│   │   │   │  ├─ data_processing/         # Scripts to process and clean collected data
+│   │   │   │  │ ├─ clean_data.py        # Clean and format raw data
+│   │   │   │  │ ├─ tokenization.py      # Tokenize text data
+│   │   │   │  │ └─ normalize.py         # Normalize text data (e.g., lowercasing, removing noise)
+│   │   │   │  │
+│   │   │   │  ├─ validation/              # Validate collected and processed data
+│   │   │   │  │ └─ data_validation.py   # Validate data integrity before training
+│   │   │   │  │
+│   │   │   │  └─ custom_data/         # Custom user data
+│   │   │   │    └─ custom_intents.json # Custom intent data for specific tasks
+│   │   │   │  
+│   │   │   ├─ model_training/              # Training scripts and models
+│   │   │   │  ├─ integration_model/       # Training models for integrating various features
+│   │   │   │  │ └─ train_integration_model.py # Script to train integration model
+│   │   │   │  │
+│   │   │   │  ├─ personality_model/       # Models specifically for Sebastian's personality
+│   │   │   │  │ ├─ train_personality_model.py # Train Sebastian's personality model
+│   │   │   │  │ └─ personality_preprocessing.py # Preprocess data specific to personality
+│   │   │   │  │
+│   │   │   │  ├─ voice_model/             # Models and training for voice recognition
+│   │   │   │  │ ├─ train_voice_model.py # Script to train voice recognition model
+│   │   │   │  │ └─ voice_preprocessing.py # Preprocessing for voice data
+│   │   │   │  │
+│   │   │   │  ├─ training_scripts/        # Collection of training scripts for different components
+│   │   │   │  │ ├─ train_nlp.py         # Training script for NLP tasks
+│   │   │   │  │ ├─ train_voice_recognition.py # Train the voice recognition model
+│   │   │   │  │ └─ train_personality.py # Train the personality model
+│   │   │   │  │
+│   │   │   │  ├─ logs/                    # Logs to track training progress and errors
+│   │   │   │  │ ├─ training.log         # General training progress log
+│   │   │   │  │ └─ errors.log           # Errors encountered during training
+│   │   │   │  │
+│   │   │   │  ├─ checkpoints/             # Store model checkpoints to resume training
+│   │   │   │  │ └─ checkpoint_v1/       # Versioned checkpoint data
+│   │   │   │  │
+│   │   │   │  └─ trained_models/          # Final models that are ready for deployment
+│   │   │   │    ├─ final_personality_model.h5 # The trained personality model
+│   │   │   │    └─ final_voice_model.h5 # The trained voice recognition model
+│   │   │   │   
+│   │   │   └─ deployment/                  # Scripts and models for deployment
+│   │   │      │ └─ models/                  # Final, ready-to-deploy models
+│   │   │      │   ├─ sebastian_personality.h5 # Deployed personality model
+│   │   │      │   └─ sebastian_voice_model.h5 # Deployed voice model
+│   │   │      │
+│   │   │      ├─ execution/               # Scripts that run and execute the models
+│   │   │      │ ├─ deploy_personality.py # Deploy the personality model
+│   │   │      │ ├─ deploy_voice_model.py # Deploy the voice model
+│   │   │      │ ├─ run_sebastian.py    # Main script to run Sebastian
+│   │   │      │
+│   │   │      ├─ updates/                 # Scripts for updating models and improving
+│   │   │      │ ├─ update_personality_model.py # Update the personality model
+│   │   │      │ └─ update_voice_model.py # Update the voice model
+│   │   │      │
+│   │   │      └─ backups/                 # Backup copies of deployed models
+│   │   │        ├─ backup_personality_model.h5 # Backup of personality model
+│   │   │        └─ backup_voice_model.h5 # Backup of voice model
+│   │   │   
+│   │   ├───processing
+│   │   │       coherence.py
+│   │   │       field.py
+│   │   │       quantum.py
+│   │   │       reality.py
+│   │   │       state.py
+│   │   │       tensor.py
+│   │   │       __init__.py
+│   │   │
+│   │   ├───processors
+│   │   │       acceleration.py
+│   │   │       harmonics.py
+│   │   │       integration.py
+│   │   │       interface.py
+│   │   │       measurement.py
+│   │   │       precision.py
+│   │   │       synchronization.py
+│   │   │       validation.py
+│   │   │
+│   │   ├───reality
+│   │   │       coherence.py
+│   │   │       interface.py
+│   │   │       manager.py
+│   │   │       stabilizer.py
+│   │   │
+│   │   ├───stabilization
+│   │   │       coherence.py
+│   │   │       field.py
+│   │   │       reality.py
+│   │   │       stability.py
+│   │   │       state.py
+│   │   │
+│   │   ├───tests
+│   │   │       quantum_personality_test.py
+│   │   │       quantum_system_test.py
+│   │   │
+│   │   └───validation
+│   │           coherence.py
+│   │           field.py
+│   │           reality.py
+│   │           state.py
+│   │           __init__.py
+│   │
+│   ├───security
+│   │   ├───Monitoring
+│   │   │       field_scanner.py
+│   │   │       monitor_core.py
+│   │   │       reality_monitor.py
+│   │   │       threat_detector.py
+│   │   │
+│   │   ├───Response
+│   │   │   │   action_generator.py
+│   │   │   │
+│   │   │   ├───Field
+│   │   │   │       field_coordinator.py
+│   │   │   │       field_enhancer.py
+│   │   │   │       field_harmonizer.py
+│   │   │   │       field_optimizer.py
+│   │   │   │       field_reality_coordinator.py
+│   │   │   │       field_reality_harmonizer.py
+│   │   │   │       field_reality_optimizer.py
+│   │   │   │       field_stabilizer.py
+│   │   │   │
+│   │   │   ├───Quantum
+│   │   │   │       quantum_coordinator.py
+│   │   │   │       quantum_defender.py
+│   │   │   │       quantum_enhancer.py
+│   │   │   │       quantum_field_generator.py
+│   │   │   │       quantum_field_harmonizer.py
+│   │   │   │       quantum_field_optimizer.py
+│   │   │   │       quantum_harmonizer.py
+│   │   │   │       quantum_optimizer.py
+│   │   │   │       quantum_reality_enhancer.py
+│   │   │   │       quantum_reality_harmonizer.py
+│   │   │   │       quantum_stabilizer.py
+│   │   │   │
+│   │   │   └───Reality
+│   │   │           reality_defender.py
+│   │   │           reality_enhancer.py
+│   │   │           reality_field_generator.py
+│   │   │           reality_field_harmonizer.py
+│   │   │           reality_optimizer.py
+│   │   │           reality_stabilizer.py
+│   │   │           response_core.py
+│   │   │
+│   │   └───Threat
+│   │           field_protector.py
+│   │           response_generator.py
+│   │           threat_analyzer.py
+│   │           threat_core.py
+│   │
+│   ├───strategic
+│   │   ├───Combat
+│   │   │       combat_core.py
+│   │   │       combat_optimizer.py
+│   │   │       combat_processor.py
+│   │   │       field_tactics.py
+│   │   │
+│   │   ├───Defense
+│   │   │       defense_core.py
+│   │   │       defense_processor.py
+│   │   │       field_defense.py
+│   │   │       shield_generator.py
+│   │   │
+│   │   └───Planning
+│   │           field_coordinator.py
+│   │           plan_generator.py
+│   │           quantum_predictor.py
+│   │           strategy_core.py
+│   │
+│   ├───training
+│   │   ├───data_collection
+│   │   │       behavior_extractor.py
+│   │   │       script_processor.py
+│   │   │
+│   │   ├───model_training
+│   │   │       behavior_trainer.py
+│   │   │       nlp_engine.py
+│   │   │
+│   │   └───validation
+│   │           accuracy_checker.py
+│   │           feedback_processor.py
+│   │
+│   ├───utils
+│   │       codebase_scanner.py
+│   │       extension_scanner.py
+│   │       gpu_accelerator.py
+│   │       import_scanner.py
+│   │
+│   ├───voice-cloning
+│   │   │   data-preprocessing.py
+│   │   │   inference.py
+│   │   │   training.py
+│   │   │   voice-cloning-model.py
+│   │   │
+│   │   ├───config
+│   │   │       voice-config.json
+│   │   │
+│   │   └───dataset
+│   │           audio-data
+│   │           transcriptions
+│   │
+│   └───__pycache__
+│           __init__.cpython-39.pyc
+│
+├───config
+│       credentials.json
+│       database_config.json
+│       logging.conf
+│       nlp_config.json
+│       settings.json
+│       speech_config.json
+│
+├───docs
+│   │   api_reference.md
+│   │   architecture.md
+│   │   open.txt
+│   │   README.md
+│   │   roadmap.md
+│   │   setup_guide.md
+│   │   testing_guide.md
+│   │   troubleshooting.md
+│   │
+│   └───mydocs
+│           coding guidelines.txt
+│           New Text Document.txt
+│           personality-defs.txt
+│           personality-dev.txt
+│           Q-Dev-Update.txt
+│           Rebuild structure.txt
+│           The Rebuild.txt
+│
+├───frontend
+│   ├───Desktop
+│   │   │   APIClient.cs
+│   │   │   MainWindow.xaml
+│   │   │   MainWindow.xaml.cs
+│   │   │   QuantumFieldRenderer.cs
+│   │   │   Sebastian.csproj
+│   │   │   SpeechHandler.cs
+│   │   │   VoiceProcessor.cs
+│   │   │   WebSocketClient.cs
+│   │   │
+│   │   ├───Assets
+│   │   ├───Controls
+│   │   │       QuantumFieldControl.xaml
+│   │   │       QuantumFieldControl.xaml.cs
+│   │   │       RealityCoherenceMonitor.xaml
+│   │   │
+│   │   ├───Models
+│   │   │       QuantumState.cs
+│   │   │
+│   │   ├───Quantum
+│   │   ├───Services
+│   │   │       QuantumService.cs
+│   │   │       VoiceCommandService.cs
+│   │   │
+│   │   ├───ViewModels
+│   │   │       MainViewModel.cs
+│   │   │
+│   │   └───Views
+│   ├───Mobile
+│   │   │   api_client.py
+│   │   │   config.py
+│   │   │   intents.json
+│   │   │   main.py
+│   │   │   voice_control.py
+│   │   │
+│   │   ├───Assets
+│   │   ├───Components
+│   │   │       QuantumField.py
+│   │   │       quantum_renderer.py
+│   │   │
+│   │   ├───Quantum
+│   │   │       TensorEngine.py
+│   │   │
+│   │   ├───Services
+│   │   │       FieldProcessor.py
+│   │   │       quantum_service.py
+│   │   │
+│   │   └───Utils
+│   └───Shared
+│       ├───Constants
+│       │       quantum_constants.py
+│       │
+│       ├───Models
+│       │       FieldStrength.cs
+│       │
+│       └───Utils
+├───scans
+│       class-scan.py
+│       class.csv
+│       codebase_scan_20250207_084813_extensions.txt
+│       codebase_scan_20250207_084813_imports.txt
+│       dep-lib-scan.csv
+│       depscan.py
+│
+├───scripts
+│       cleanup.sh
+│       deploy_desktop.ps1
+│       deploy_mobile.py
+│       install_dependencies.sh
+│       start_server.sh
+│       update_models.py
+│
+├───tests
+│       ai_tests.py
+│       api_tests.py
+│       csharp_tests.cs
+│       integration_tests.py
+│       mobile_tests.py
+│
+└───__pycache__
+        import_manager.cpython-39.pyc

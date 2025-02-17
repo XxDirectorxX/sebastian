@@ -1,0 +1,4 @@
+input,intent,response
+Hello,greeting,"Greetings, my lord"
+Good morning,greeting,"Good morning, young master"
+Good evening,greeting,"Good evening, my lord"
