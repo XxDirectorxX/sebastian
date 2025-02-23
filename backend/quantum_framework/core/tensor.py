@@ -607,4 +607,3 @@ class Tensor(nn.Module):
 
     def __repr__(self):
         return f"Tensor(field_strength={self.field_strength}, reality_coherence={self.reality_coherence}, device={self.device})"
-

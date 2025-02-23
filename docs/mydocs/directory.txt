@@ -267,29 +267,6 @@ R:.
 │   │   │           test_core.py
 │   │   │           test_core.py.bak
 │   │   │
-│   │   ├───evolution
-│   │   │       coherence.py
-│   │   │       coherence_evolution.py
-│   │   │       entanglement_evolution.py
-│   │   │       evolution_harmonizer.py
-│   │   │       evolution_integrator.py
-│   │   │       evolution_manager.py
-│   │   │       evolution_monitor.py
-│   │   │       evolution_optimizer.py
-│   │   │       evolution_orchestrator.py
-│   │   │       evolution_processor.py
-│   │   │       evolution_stabilizer.py
-│   │   │       evolution_validator.py
-│   │   │       field_evolution.py
-│   │   │       harmonics_evolution.py
-│   │   │       operator_evolution.py
-│   │   │       project_evolution_orchestrator.py
-│   │   │       quantum_evolution_core.py
-│   │   │       reality_evolution.py
-│   │   │       state_evolution.py
-│   │   │       superposition_evolution.py
-│   │   │       upgrade_orchestrator.py
-│   │   │
 │   │   ├───integration
 │   │   │       emotion.py
 │   │   │       personality.py
@@ -338,8 +315,12 @@ R:.
 │   │   │   │  
 │   │   │   ├─ training/                    # Data collection, processing, and preparation
 │   │   │   │  ├─ ai_modeling/             # Scripts related to AI model definitions and evaluation
-│   │   │   │  │ ├─ model_definitions.py # Define AI models and architectures
-│   │   │   │  │ └─ model_evaluation.py  # Evaluate the performance of AI models
+│   │   │   │
+│   │   │   ├─ model_training/               	# Training scripts & models for personality behavior
+│   │   │   │  ├─ personality_model.py      	# Script to train personality model
+│   │   │   │  ├─ personality_model.h5      	# Trained personality model (H5 file)
+│   │   │   │  ├─ training_scripts/         	# Scripts for training personality models
+│   │   │   │  │
 │   │   │   │  │
 │   │   │   │  ├─ analysis/                # Analyzing the data for insights and improvements
 │   │   │   │  │ ├─ data_insights.py     # Generate insights from the collected data

@@ -19,7 +19,7 @@ Future-Proofing: If you want to upgrade Sebastian’s personality or intelligenc
 
 quantum_framework/
 │   │	├─ personality/
-│   │   │   ├─ ai/  				# AI-related processing and intelligence systems
+│   │   │   ├─ ai/  				        # AI-related processing and intelligence systems
 │   │   │   │  ├─ cognitive_engine/  		# Handles logical reasoning, learning, and adaptation
 │   │   │   │  │  ├─ decision_making.py  	# Core logic for making decisions based on input
 │   │   │   │  │  ├─ neural_adaptation.py  	# Adapts responses based on learned behavior
@@ -30,42 +30,138 @@ quantum_framework/
 │   │   │   │     ├─ quantum_learning.py  	# Self-improving AI learning techniques
 │   │   │   │     └─  predictive_modeling.py   # Uses quantum computing for future predictions
 │   │   │   │   
-│   │   │   ├─ brain/                       	# Memory, reasoning, decision-making
-│   │   │   ├─ memory_core/             	# Structured memory storage & recall
-│   │   │   │  ├─ long_term_memory.py  		# Stores user data & long-term interactions
-│   │   │   │  ├─ short_term_memory.py 		# Tracks real-time interactions
-│   │   │   │  └─ knowledge_base.py    		# Stores structured knowledge
+│   │   │   ├─ brain/                       # Decision-making, reasoning, memory
+│   │   │   │  ├─ memory/                   # Store and retrieve memory (past interactions)
+│   │   │   │  │  ├─ memory_manager.py  	# Manages memory storage and retrieval
+│   │   │   │  │  ├─ memory_retrieval.py  	# Retrieves past interactions
+│   │   │   │  │  └─ memory_storage.py  	# Stores new interactions
+│   │   │   │  │
+│   │   │   │  ├─ reasoning/                # Reasoning and decision-making logic
+│   │   │   │  │  ├─ ?
+│   │   │   │  │  ├─ ?
+│   │   │   │  │  └─ ?
+│   │   │   │  │
+│   │   │   │  └─ decision_maker/           # Make decisions based on input and logic
+│   │   │   │     ├─ decision_tree.py  	    # Decision-making tree logic
+│   │   │   │     └─ decision_maker.py  	# Makes decisions based on logic
+│   │   │   │
+│   │   │   ├─ butler/                      # Sebastian's personality logic & responses
+│   │   │   │  ├─ butler_logic.py           # Core logic for butler-related tasks
+│   │   │   │  ├─ butler_response.py        # Generate butler-like responses
+│   │   │   │  ├─ butler_traits.py          # Define butler-specific traits
+│   │   │   │  ├─ butler_interactions.py    # Handle butler-specific interactions
+│   │   │   │  ├─ loyalty_trait.py          # Loyalty-related behavior and traits
+│   │   │   │  ├─ elegance_trait.py         # Elegance-related behavior and traits
+│   │   │   │  ├─ intelligence_trait.py     # Intelligence-related behavior and traits
+│   │   │   │  ├─ mood_management.py        # Handle and adjust mood
+│   │   │   │  └─ response_logic.py         # Determine the appropriate responses based on personality
 │   │   │   │
 │   │   │   ├─ decision_making/         	# Decision-making and strategy
 │   │   │   │  ├─ tactical_analysis.py 		# Quick reactions and situational awareness
 │   │   │   │  ├─ strategic_planning.py		# Long-term decision-making
 │   │   │   │  └─ threat_assessment.py 		# Assess potential threats and risks
+│   │   │   │                
+│   │   │   ├─ memory_core/             	# Structured memory storage & recall
+│   │   │   │  ├─ long_term_memory.py  		# Stores user data & long-term interactions
+│   │   │   │  ├─ short_term_memory.py 		# Tracks real-time interactions
+│   │   │   │  └─ knowledge_base.py    		# Stores structured knowledge
 │   │   │   │
-│   │   │   ├─ butler/                          # Sebastian's personality logic & responses
-│   │   │   │  ├─ personality_traits.py     	# Defines personality traits (e.g., polite, sarcastic)
-│   │   │   │  ├─ tone_analysis.py          	# Defines response tone (formal, casual, etc.)
-│   │   │   │  ├─ interaction_patterns.py   	# Patterns for how Sebastian interacts with users
-│   │   │   │  └─ humor.py                  	# Adds humor to responses based on context
+│   │   │   ├─ model_training/              # Training scripts & models for personality behavior
+│   │   │   │  ├─ integration_model/        # Training models for integrating various features
+│   │   │   │  │ └─ train_integration_model.py # Script to train integration model
+│   │   │   │  │
+│   │   │   │  ├─ personality_model/       # Models specifically for Sebastian's personality
+│   │   │   │  │ ├─ train_personality_model.py # Train Sebastian's personality model
+│   │   │   │  │ ├─ personality_preprocessing.py # Preprocess data specific to personality
+│   │   │   │  │ ├─ personality_model.py    # Script to train personality model
+│   │   │   │  │ ├─ personality_model.h5    # Trained personality model (H5 file)
+│   │   │   │  │ └─ personality_model_config.py # Configuration for personality model
+│   │   │   │  │
+│   │   │   │  ├─ voice_model/              # Models and training for voice recognition
+│   │   │   │  │ ├─ train_voice_model.py # Script to train voice recognition model
+│   │   │   │  │ ├─ voice_model.py          # Script to train voice recognition model
+│   │   │   │  │ ├─ voice_model.h5
+│   │   │   │  │ ├─ voice_model_config.py   # Configuration for voice model
+│   │   │   │  │ └─ voice_preprocessing.py  # Preprocessing for voice data
+│   │   │   │  │
+│   │   │   │  ├─ training_scripts/         # Collection of training scripts for different components
+│   │   │   │  │ ├─ train_nlp.py            # Training script for NLP tasks
+│   │   │   │  │ ├─ train_voice_recognition.py # Train the voice recognition model
+│   │   │   │  │ └─ train_personality.py    # Train the personality model
+│   │   │   │  │
+│   │   │   │  ├─ logs/                     # Logs to track training progress and errors
+│   │   │   │  │ ├─ training.log            # General training progress log
+│   │   │   │  │ └─ errors.log              # Errors encountered during training
+│   │   │   │  │
+│   │   │   │  ├─ checkpoints/              # Store model checkpoints to resume training
+│   │   │   │  │ └─ checkpoint_v1/          # Versioned checkpoint data
+│   │   │   │  │
+│   │   │   │  └─ trained_models/           # Final models that are ready for deployment
+│   │   │   │    ├─ final_personality_model.h5 # The trained personality model
+│   │   │   │    └─ final_voice_model.h5    # The trained voice recognition model
 │   │   │   │
-│   │   │   ├─ persona/                      	# Customization & user interaction settings
-│   │   │   │  ├─ customization.py          	# Allows users to personalize Sebastian's responses
-│   │   │   │  ├─ preferences.py            	# Stores user preferences for interaction
-│   │   │   │  └─ user_profile.py           	# User-specific data (e.g., name, preferred tone)
+│   │   │   ├─ persona/                         # Customization & user interaction settings
+│   │   │   │  ├─ sebastian_personality/        # Core logic defining Sebastian's personality
+│   │   │   │  │  ├─ personality_traits.py      # Defines personality traits
+│   │   │   │  │  ├─ greetings                  # Define greetings and conversational openers
+│   │   │   │  │  └─ interaction_settings.py    # Configure how Sebastian interacts with the user
+│   │   │   │  │
+│   │   │   │  ├─ customization/        	    # Allows users to personalize Sebastian's responses
+│   │   │   │  ├─ preferences /           	    # Stores user preferences for interaction
+│   │   │   │  └─ user_profile/          	    # User-specific data (e.g., name, preferred tone)
 │   │   │   │
 │   │   │   ├─ training/                     	# Data collection and preparation (not training)
 │   │   │   │  ├─ ai_modeling/              	# Models for defining AI behavior
+│   │   │   │  │  ├─ personality_model.py  	    # Model for defining personality
+│   │   │   │  │  ├─ personality_model.h5  	    # Trained personality model (H5 file)
+│   │   │   │  │  └─ training_scripts/  	    # Scripts for training personality models
+│   │   │   │  │
 │   │   │   │  ├─ analysis/                 	# Analysis of training data (for personality)
+│   │   │   │  │  ├─ data_analysis.py  	        # Analyzes training data
+│   │   │   │  │  ├─ evaluation_metrics.py  	# Evaluates model performance
+│   │   │   │  │  └─ visualization
+│   │   │   │  │     └─ visualization.py  	    # Visualizes data for analysis
+│   │   │   │  │
 │   │   │   │  ├─ data_collection/          	# Collects personality-related data (e.g., tone, sentiment)
+│   │   │   │  │  ├─ conversation_logs.py  	    # Collects conversation logs
+│   │   │   │  │  ├─ sentiment_analysis.py  	# Analyzes sentiment in conversations
+│   │   │   │  │  ├─ tone_analysis.py  	        # Analyzes tone in conversations
+│   │   │   │  │  ├─ collect_intents.py         # Collect user intents and data for training
+│   │   │   │  │  └─ scrape_data.py             # Web scraping for external data
+│   │   │   │  │
+│   │   │   │  ├─ data_preprocessing/        	# Preprocesses data for training
+│   │   │   │  │  ├─ data_cleaning.py  	        # Cleans and preprocesses data
+│   │   │   │  │  ├─ data_augmentation.py  	    # Augments data for training
+│   │   │   │  │  └─ data_encoding.py  	        # Encodes data for training
+│   │   │   │  │
 │   │   │   │  ├─ data_processing/          	# Cleans and preprocesses data for use in AI models
+│   │   │   │  │  ├─ clean_data.py              # Clean and format raw data
+│   │   │   │  │  ├─ tokenization.py            # Tokenize text data
+│   │   │   │  │  └─ normalize.py               # Normalize text data (e.g., lowercasing, removing noise)
+│   │   │   │  │
 │   │   │   │  └─ validation/               	# Validation of data for personality models
+│   │   │   │     ├─ validation_metrics.py  	# Metrics for evaluating model performance
+│   │   │   │     └─ validation_scripts.py  	# Scripts for validating data for personality models
+│   │   │   │
+│   │   │   ├─ deployment/                  # Scripts and models for deployment
+│   │   │   │  │ └─ models/                  # Final, ready-to-deploy models
+│   │   │   │  │   ├─ sebastian_personality.h5 # Deployed personality model
+│   │   │   │  │   └─ sebastian_voice_model.h5 # Deployed voice model
+│   │   │   │  │
+│   │   │   │  ├─ execution/               # Scripts that run and execute the models
+│   │   │   │  │ ├─ deploy_personality.py # Deploy the personality model
+│   │   │   │  │ ├─ deploy_voice_model.py # Deploy the voice model
+│   │   │   │  │ ├─ run_sebastian.py    # Main script to run Sebastian
+│   │   │   │  │
+│   │   │   │  ├─ updates/                 # Scripts for updating models and improving
+│   │   │   │  │ ├─ update_personality_model.py # Update the personality model
+│   │   │   │  │ └─ update_voice_model.py # Update the voice model
+│   │   │   │  │
+│   │   │   │  └─ backups/                 # Backup copies of deployed models
+│   │   │   │    ├─ backup_personality_model.h5 # Backup of personality model
+│   │   │   │    └─ backup_voice_model.h5 # Backup of voice model
 │   │   │   │
 │   │   │   ├─ sources/                  	# Sources of data (e.g., conversation logs, surveys)
-│   │   │   │
-│   │   │   ├─ model_training/               	# Training scripts & models for personality behavior
-│   │   │   │  ├─ personality_model.py      	# Script to train personality model
-│   │   │   │  ├─ personality_model.h5      	# Trained personality model (H5 file)
-│   │   │   │  └─ training_scripts/         	# Scripts for training personality models
-│   │   │   │
 │   │   │   ├─ logs/                     	# Logs related to training personality models
 │   │   │   └─ checkpoints/              	# Model checkpoints to save progress during training
 

@@ -7,31 +7,68 @@ import torch.nn.functional as F
 import numpy as np
 
 #######################
-# Quantum Framework
+# Quantum Framework Core
 #######################
+# Core Components
+from backend.quantum_framework.core.processor import Processor
+from backend.quantum_framework.core.field import Field
+from backend.quantum_framework.core.tensor import Tensor
+from backend.quantum_framework.core.logger import QuantumLogger
+from backend.quantum_framework.core.emotion import Emotion
+from backend.quantum_framework.core.personality import Personality
+
+# Quantum Integration
+from backend.quantum_framework.personality.quantum.integration.quantum_bridge import QuantumBridge
+from backend.quantum_framework.personality.quantum.processing.quantum_processor import QuantumProcessor
+from backend.quantum_framework.personality.quantum.entanglement.entanglement_processor import EntanglementProcessor
+
+# Model Training & Data Processing
+from backend.quantum_framework.personality.model_training.personality_model.personality_model import PersonalityModel
+from backend.quantum_framework.personality.model_training.integration_model.train_integration_model import IntegrationModelTrainer
+from backend.quantum_framework.personality.training.data_processing.personality.behaviors.behavior_processor import BehaviorProcessor
+
+# Validation & Feedback
+from backend.quantum_framework.personality.training.validation.feedback.feedback_processor import FeedbackProcessor
+from backend.quantum_framework.personality.training.validation.feedback.accuracy_checker import AccuracyChecker
+
+#######################
+# Quantum Dependencies
+#######################
+# Qiskit Core
 import qiskit
-from qiskit import QuantumCircuit, transpile
+from qiskit import QuantumCircuit, transpile, execute
 from qiskit.primitives import Sampler, StatevectorSampler
 from qiskit_aer import Aer, AerSimulator
+from qiskit.quantum_info import Statevector, DensityMatrix, Operator
+
+# Qiskit Providers & Runtime
 from qiskit.providers.job import Job
 from qiskit.providers.backend import Backend
 from qiskit.providers.jobstatus import JobStatus
+from qiskit_ibm_runtime import QiskitRuntimeService, Session, Options
+
+# Qiskit Circuit Components
 from qiskit.circuit.library import standard_gates, Initialize
-from qiskit.visualization import circuit_drawer
-from qiskit.quantum_info import Statevector
-from qiskit_ibm_runtime import QiskitRuntimeService
+from qiskit.visualization import circuit_drawer, plot_histogram, plot_state_city
+from qiskit.algorithms import VQE, QAOA, Grover
 
 #######################
 # Machine Learning
 #######################
+# PyTorch Components
+from torch.utils.data import Dataset, DataLoader, TensorDataset, random_split
+from torch.optim import Adam, SGD, RMSprop, AdamW
+from torch.optim.lr_scheduler import StepLR, CosineAnnealingLR, ReduceLROnPlateau
+from torch.nn.init import xavier_uniform_, kaiming_uniform_
+
+# Transformers
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
-    AutoModel
+    AutoModel,
+    GPT2LMHeadModel,
+    GPT2Tokenizer
 )
-from torch.utils.data import Dataset, DataLoader
-from torch.optim import Adam, SGD
-from torch.optim.lr_scheduler import StepLR
 
 #######################
 # Data Processing
@@ -127,9 +164,6 @@ from backend.intelligence_systems.ai.interface.voice_chatbot import QuantumVoice
 from backend.intelligence_systems.ai.core.model_training import ModelTraining, TrainingConfig
 from backend.intelligence_systems.ai.core import config
 
-from backend.quantum_framework.core.emotion import Emotion
-from backend.quantum_framework.core.personality import Personality
-
 #######################
 # Framework Constants
 #######################
@@ -154,7 +188,8 @@ def get_quantum_backend():
         'noise_model': None,
         'basis_gates': ['u1', 'u2', 'u3', 'cx'],
         'coupling_map': None,
-        'n_qubits': 8
+        'n_qubits': 8,
+        'optimization_level': 3
     }
     transpiled_circuit = transpile(QuantumCircuit(8), backend)
     return backend, transpiled_circuit, backend_config
@@ -170,7 +205,11 @@ QUANTUM_BACKEND = get_quantum_backend()
 #######################
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("quantum_framework.log"),
+        logging.StreamHandler(sys.stdout)
+    ]
 )
 logger = logging.getLogger(__name__)
 
